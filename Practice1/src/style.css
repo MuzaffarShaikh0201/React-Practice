@@ -1,55 +1,122 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
 }
 
 body {
-  background-color: #282D35;
-  min-height: 100vh;
-}
-
-button {
-  cursor: pointer;
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  background-color: #21222A;
-  height: 90px;
-  padding: 30px 25px;
-}
-
-.nav--logo_text, .nav--title {
   margin: 0;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 30px 25px;
+  height: 60px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+nav.dark {
+  background-color: #21222A;
+}
+
+.nav--icon {
+  height: 30px;
+  margin-right: 10px;
+}
+
 .nav--logo_text {
-  padding: 0 7px;
   color: #61DAFB;
   margin-right: auto;
   font-weight: 700;
-  font-size: 22.2535px;
-  line-height: 27px;
-  letter-spacing: -0.05em;
+  font-size: 22px;
 }
 
 .nav--title {
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 19px;
-  text-align: right;
   color: #DEEBF8;
+}
+
+.toggler {
+  display: flex;
+  align-items: center;
+}
+
+.toggler p {
+  font-size: 0.625rem;
+  font-weight: 600;
+}
+
+.toggler--slider {
+  width: 25px;
+  height: 13px;
+  background-color: #2b283a;
+  border-radius: 2rem;
+  margin-inline: 7px;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid black;
+  box-sizing: content-box;
+}
+
+nav.dark .toggler--slider {
+  border-color: white;
+  background-color: #f5f5f5;
+}
+
+.toggler--slider--circle {
+  height: 13px;
+  width: 13px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+nav.dark .toggler--slider--circle {
+  background-color: black;
+}
+
+.toggler--light {
+  color: #2b283a;
+}
+
+nav.dark .toggler--light {
+  color: #918e9b;
+}
+
+.toggler--dark {
+  color: #d5d4d8;
+}
+
+nav.dark .toggler--dark {
+  color: #ffffff;
+}
+
+nav.dark .toggler--slider {
+  justify-content: flex-end;
 }
 
 main {
   padding: 57px 27px;
-  color: white;
-  background-image: url(./asset/reactjs-icon_2.png);
+  background-image: url(./asset/reactjs-icon_light.svg);
   background-repeat: no-repeat;
-  background-position: right 75%;
+  background-position: right center;
+  flex: 1 1 auto;
+  background-color: white;
+  color: #2b283a;
+}
+
+main.dark {
+  background-image: url(./asset/reactjs-icon_2.png);
+  background-color: #282d35;
+  color: white;
 }
 
 .main--title {
@@ -61,7 +128,6 @@ main {
 .main--list {
   margin-top: 46px;
   max-width: 400px;
-  padding: 0 51px;
 }
 
 .main--list > li {
@@ -74,16 +140,21 @@ main {
   color: #61DAFB;
 }
 
-.footer {
+footer {
   position: fixed;
   bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #21222A;
   height: 45px;
   width: 100vw;
   font-size: 12px;    
   font-weight: 500;
-  color: #DEEBF8;
+  background-color: white;
+  color: #2b283a;
+}
+
+footer.dark {
+  background-color: #21222A;
+  color: white;
 }
